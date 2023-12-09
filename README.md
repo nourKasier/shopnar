@@ -28,6 +28,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 3- Install the project dependencies using Composer:
 
+```
 composer install
 ```
 
