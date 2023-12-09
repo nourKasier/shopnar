@@ -34,6 +34,31 @@ composer install
 
 4- Create a copy of the .env.example file and rename it to .env. Update the necessary configuration values in the .env file, such as database credentials and application key.
 
+5-Generate a new application key:
+
+```
+php artisan key:generate
+```
+
+6- Run the database migrations to create the required tables:
+
+```
+php artisan migrate
+```
+
+7- (Optional) Seed the database with initial data:
+
+```
+php artisan db:seed
+```
+
+8- Running the Project:
+To run the project, execute the following command:
+
+```
+php artisan serve
+```
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
