@@ -59,6 +59,13 @@ To run the project, execute the following command:
 php artisan serve
 ```
 
+9- After seeding the database you can login using super-admin account which is:
+
+```
+email: superadmin@superadmin.com
+password: password
+```
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
