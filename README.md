@@ -27,7 +27,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 3- Install the project dependencies using Composer:
 
 composer install
-```
+
 4- Create a copy of the .env.example file and rename it to .env. Update the necessary configuration values in the .env file, such as database credentials and application key.
 
 ## Learning Laravel
