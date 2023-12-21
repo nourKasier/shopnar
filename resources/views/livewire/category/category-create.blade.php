@@ -33,6 +33,7 @@
                                 @error('parent_id') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <button type="submit" class="btn btn-primary">Create Category</button>
+                            <a href="{{ route('categories.index') }}" class="btn btn-secondary">Back</a>
                         </form>
                     </div>
                 </div>

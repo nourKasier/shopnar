@@ -11,11 +11,16 @@
                 <div class="p-6 text-gray-900">
                     <div>
                         @if (session()->has('message'))
-                        <div class="alert alert-success mb-4">
-                            {{ session('message') }}
-                        </div>
+                            <div id="flash-message" class="alert alert-success mb-4">
+                                {{ session('message') }}
+                            </div>
+                            <script>
+                                setTimeout(function() {
+                                    document.getElementById('flash-message').style.display = 'none';
+                                }, 5000);
+                            </script>
                         @endif
-
+                        <a href="{{ route('categories.create') }}" class="btn btn-primary mb-4">Create Category</a>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -27,18 +32,19 @@
                             </thead>
                             <tbody>
                                 @foreach ($categories as $category)
-                                <tr>
-                                    <td>{{ $category->id }}</td>
-                                    <td>{{ $category->name }}</td>
-                                    <td>{{ $category->parent ? $category->parent->name : 'N/A' }}</td>
-                                    <td>
-                                        <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary">Edit</a>
-                                        <button wire:click="deleteCategory({{ $category->id }})" class="btn btn-danger">Delete</button>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>{{ $category->id }}</td>
+                                        <td>{{ $category->name }}</td>
+                                        <td>{{ $category->parent ? $category->parent->name : 'N/A' }}</td>
+                                        <td>
+                                            <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary">Edit</a>
+                                            <button wire:click.prevent="deleteCategory({{ $category->id }})" wire:loading.attr="disabled" wire:target="deleteCategory({{ $category->id }})" class="btn btn-danger">Delete</button>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                        {{ $categories->links() }} <!-- Add pagination links -->
                     </div>
                 </div>
             </div>

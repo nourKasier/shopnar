@@ -4,12 +4,14 @@ namespace App\Livewire\Category;
 
 use App\Models\Category;
 use Livewire\Component;
-
+use Livewire\WithPagination;
 class CategoryIndex extends Component
 {
+    use WithPagination;
     public function render()
     {
-        $categories = Category::all();
+        // $categories = Category::all();
+        $categories = Category::paginate(10);
 
         return view('livewire.category.category-index', compact('categories'));
     }
@@ -23,7 +25,10 @@ class CategoryIndex extends Component
 
         // Delete the category itself
         $category->delete();
-        return redirect()->route('categories.index');
-        // session()->flash('message', 'Category and associated products deleted successfully.');
+
+        session()->flash('message', 'Category and associated products deleted successfully.');
+
+        // Redirect to the same page
+        return $this->redirect(route('categories.index'));
     }
 }

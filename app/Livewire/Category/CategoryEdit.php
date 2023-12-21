@@ -36,8 +36,9 @@ class CategoryEdit extends Component
             'parent_id' => $this->parent_id,
         ]);
 
-        // session()->flash('message', 'Category updated successfully.');
-        return redirect()->route('categories.index');
+        session()->flash('message', 'Category updated successfully.');
+
+        // Redirect back to the edit page
+        return redirect()->route('categories.edit', $this->category);
     }
 }
-
