@@ -21,6 +21,51 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## Installation
+1- Clone/Download the repository to your local machine.
+
+2- Navigate to the project directory.
+
+3- Install the project dependencies using Composer:
+
+```
+composer install
+```
+
+4- Create a copy of the .env.example file and rename it to .env. Update the necessary configuration values in the .env file, such as database credentials and application key.
+
+5-Generate a new application key:
+
+```
+php artisan key:generate
+```
+
+6- Run the database migrations to create the required tables:
+
+```
+php artisan migrate
+```
+
+7- (Optional) Seed the database with initial data:
+
+```
+php artisan db:seed
+```
+
+8- Running the Project:
+To run the project, execute the following command:
+
+```
+php artisan serve
+```
+
+9- After seeding the database you can login using super-admin account which is:
+
+```
+email: superadmin@superadmin.com
+password: password
+```
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
